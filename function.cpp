@@ -53,7 +53,35 @@ status Oujilide_decompose(int a,int b,O_Linklist &L)
                 return ERROR;
 }
 
-status inverse_solution(O_Linklist L)
+status inverse_solution(O_Linklist L,int & Ans,int x)
 {
-        
+        O_Lnode *p;
+        p=L.head->next;
+        if(p==NULL)
+                return ERROR;
+        else if(p->q!=1)
+                return ERROR;
+        Ans_Lnode answer;
+        Ans_Lnode answer_tep;
+        answer.gcd=p->q;
+        answer.a1=p->devision;
+        answer.a2=p->devider;
+        answer.c1=1;
+        answer.c2=(-1)*p->p;
+        while(p->next!=NULL)
+        {
+                p=p->next;
+                answer_tep=answer;
+                answer.a1=p->devision;
+                answer.c1=answer_tep.c2;
+                answer.a2=answer_tep.a1;
+                answer.c2=answer_tep.c1-answer_tep.c2*p->p;
+        }
+        if(x==answer.a1)
+                Ans=answer.c1;
+        else if(x==answer.a2)
+                Ans=answer.c2;
+        else
+                return ERROR;
+        return OK;
 }

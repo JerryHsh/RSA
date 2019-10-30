@@ -46,7 +46,7 @@ int modlous(int a,int b,int m);
 char convert(int a);
 status InitList(O_Linklist &L);
 status Oujilide_decompose(int a,int b,O_Linklist &L);
-status inverse_solution(O_Linklist L);
+status inverse_solution(O_Linklist L,int &Ans,int x);
 
 extern int my_storage_1;       //shang
 extern int my_storage_2;       //yu

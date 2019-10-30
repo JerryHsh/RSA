@@ -13,7 +13,7 @@ int main()
         long key;
         long decrpted_num;
         O_Linklist L;
-        O_Lnode *p=L.head;
+        O_Lnode *p;
         cout<<"Input the public key please"<<endl;
         cout<<"n:"<<endl;
         cin>>n;
@@ -25,17 +25,16 @@ int main()
         cin>>prime2;
         //give the key of decryption
         InitList(L);
+        p=L.head;
         store_c_p=(prime1-1)*(prime2-1);
         Oujilide_decompose(store_c_p,e,L);
-        /*
+        inverse_solution(L,private_key,e);
+        cout<<"your private_key is :"<<private_key<<endl;
         while(p->next!=NULL)
         {
                 p=p->next;
                 cout<<p->devision<<"="<<p->p<<"*"<<p->devider<<"+"<<p->q<<endl;
         }
-        */
-        inverse_solution(L,private_key,e);
-        cout<<"your private_key is :"<<private_key<<endl;
         //begin to secrete;
         cout<<"Input the number you want to secret"<<endl;
         long original_num;

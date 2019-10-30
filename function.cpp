@@ -1,12 +1,12 @@
 #include"my_rsa.h"
 
-int my_storage_1;       //shang
-int my_storage_2;       //yu
+long my_storage_1;       //shang
+long my_storage_2;       //yu
 
-int modlous(int a,int b,int m)          //module a big exponent num a^b%m
+long modlous(long a,long b,long m)          //module a big exponent num a^b%m
 {
-        int i;
-        int answer=1;
+        long i;
+        long answer=1;
         for(i=0;i<b;i++)
         {
                 answer=((answer%m)*(a%m))%m;
@@ -32,7 +32,7 @@ status InitList(O_Linklist &L)
         return OK;
 }
 
-status Oujilide_decompose(int a,int b,O_Linklist &L)  
+status Oujilide_decompose(long a,long b,O_Linklist &L)  
 {
         my_storage_1=a/b;
         my_storage_2=a%b;
@@ -53,7 +53,7 @@ status Oujilide_decompose(int a,int b,O_Linklist &L)
                 return ERROR;
 }
 
-status inverse_solution(O_Linklist L,int & Ans,int x)
+status inverse_solution(O_Linklist L,long & Ans,long x)
 {
         O_Lnode *p;
         p=L.head->next;

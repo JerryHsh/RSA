@@ -6,12 +6,12 @@
 int main()
 {
         system("clear");
-        int n,e;
-        int prime1,prime2;
-        int store_c_p; //(p-1)*(q-1)
-        int private_key;
-        int key;
-        int decrpted_num;
+        long n,e;
+        long prime1,prime2;
+        long store_c_p; //(p-1)*(q-1)
+        long private_key;
+        long key;
+        long decrpted_num;
         O_Linklist L;
         O_Lnode *p=L.head;
         cout<<"Input the public key please"<<endl;
@@ -38,9 +38,9 @@ int main()
         cout<<"your private_key is :"<<private_key<<endl;
         //begin to secrete;
         cout<<"Input the number you want to secret"<<endl;
-        int original_num;
+        long original_num;
         cin>>original_num;
-        int crypted_num;
+        long crypted_num;
         crypted_num=modlous(original_num,e,n);
         cout<<crypted_num<<endl;
         cout<<"Input your private_key"<<endl;

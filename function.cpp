@@ -68,6 +68,7 @@ status inverse_solution(O_Linklist L,int & Ans,int x)
         answer.a2=p->devider;
         answer.c1=1;
         answer.c2=(-1)*p->p;
+        cout<<answer.gcd<<"="<<answer.c1<<"*"<<answer.a1<<"+"<<answer.c2<<"*"<<answer.a2<<endl;
         while(p->next!=NULL)
         {
                 p=p->next;
@@ -76,11 +77,21 @@ status inverse_solution(O_Linklist L,int & Ans,int x)
                 answer.c1=answer_tep.c2;
                 answer.a2=answer_tep.a1;
                 answer.c2=answer_tep.c1-answer_tep.c2*p->p;
+                cout<<answer.gcd<<"="<<answer.c1<<"*"<<answer.a1<<"+"<<answer.c2<<"*"<<answer.a2<<endl;
         }
+
         if(x==answer.a1)
+        {
                 Ans=answer.c1;
+                Ans+=answer.a2;
+                Ans%=answer.a2;
+        }
         else if(x==answer.a2)
+        {
                 Ans=answer.c2;
+                Ans+=answer.a1;
+                Ans%=answer.a1;
+        }
         else
                 return ERROR;
         return OK;

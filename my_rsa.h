@@ -4,6 +4,8 @@
 #ifndef MY_RSA
 #define MY_RSA
 
+using namespace std;
+
 const int ERROR=0;
 const int OK=1;
 const int OVERFLOW=-1;

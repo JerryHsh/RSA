@@ -52,3 +52,8 @@ status Oujilide_decompose(int a,int b,O_Linklist &L)
         else 
                 return ERROR;
 }
+
+status inverse_solution(O_Linklist L)
+{
+        
+}

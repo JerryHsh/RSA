@@ -13,7 +13,7 @@ const int OVERFLOW=-1;
 typedef int status;
 
 typedef struct Node
-{       long gcd; //greatest common devisor
+{      long gcd; //greatest common devisor
         long a1;//add element
         long a2;
         long c1; //coefficent

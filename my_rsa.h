@@ -1,0 +1,53 @@
+#ifndef MY_RSA
+#define MY_RSA
+
+#include<iostream>
+#include<stdlib.h>
+
+const int ERROR=0;
+const int OK=1;
+const int OVERFLOW=-1;
+
+typedef int status;
+
+typedef struct Node
+{
+        int a1;//add element
+        int a2;
+        int c1; //coefficent
+        int c2;
+        struct Node *next;
+}Ans_Lnode;
+
+typedef struct Node2
+{
+        int devider;//chuhsu
+        int devision; //beichushu
+        int p; //shang
+        int q; //yu
+        struct Node2 *next;
+}O_Lnode;
+
+typedef struct List   //a list which is filo
+{
+        Ans_Lnode * head;
+        int length;
+}Ans_LInklist;
+
+typedef struct List2
+{
+        O_Lnode *head;
+        int length;
+}O_Linklist;
+
+
+
+int modlous(int a,int b,int m);
+char convert(int a);
+status InitList(Ans_LInklist &L);
+status Oujilide_decompose(int a,int b,Ans_LInklist &L);
+
+int my_storage_1;       //shang
+int my_storage_2;       //yu
+
+#endif // !MY_RSA

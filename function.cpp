@@ -1,5 +1,8 @@
 #include"my_rsa.h"
 
+int my_storage_1;       //shang
+int my_storage_2;       //yu
+
 int modlous(int a,int b,int m)          //module a big exponent num a^b%m
 {
         int i;

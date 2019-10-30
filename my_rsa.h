@@ -1,8 +1,8 @@
-#ifndef MY_RSA
-#define MY_RSA
-
 #include<iostream>
 #include<stdlib.h>
+
+#ifndef MY_RSA
+#define MY_RSA
 
 const int ERROR=0;
 const int OK=1;
@@ -32,7 +32,7 @@ typedef struct List   //a list which is filo
 {
         Ans_Lnode * head;
         int length;
-}Ans_LInklist;
+}Ans_Linklist;
 
 typedef struct List2
 {
@@ -44,10 +44,10 @@ typedef struct List2
 
 int modlous(int a,int b,int m);
 char convert(int a);
-status InitList(Ans_LInklist &L);
-status Oujilide_decompose(int a,int b,Ans_LInklist &L);
+status InitList(O_Linklist &L);
+status Oujilide_decompose(int a,int b,O_Linklist &L);
 
-int my_storage_1;       //shang
-int my_storage_2;       //yu
+extern int my_storage_1;       //shang
+extern int my_storage_2;       //yu
 
 #endif // !MY_RSA

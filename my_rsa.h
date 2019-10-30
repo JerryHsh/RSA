@@ -13,19 +13,19 @@ const int OVERFLOW=-1;
 typedef int status;
 
 typedef struct Node
-{       int gcd; //greatest common devisor
-        int a1;//add element
-        int a2;
-        int c1; //coefficent
-        int c2;
+{       long gcd; //greatest common devisor
+        long a1;//add element
+        long a2;
+        long c1; //coefficent
+        long c2;
 }Ans_Lnode;
 
 typedef struct Node2
 {
-        int devider;//chuhsu
-        int devision; //beichushu
-        int p; //shang
-        int q; //yu
+        long devider;//chuhsu
+        long devision; //beichushu
+        long p; //shang
+        long q; //yu
         struct Node2 *next;
 }O_Lnode;
 
@@ -37,13 +37,13 @@ typedef struct List2
 
 
 
-int modlous(int a,int b,int m);
+long modlous(long a,long b,long m);
 char convert(int a);
 status InitList(O_Linklist &L);
-status Oujilide_decompose(int a,int b,O_Linklist &L);
-status inverse_solution(O_Linklist L,int &Ans,int x);
+status Oujilide_decompose(long a,long b,O_Linklist &L);
+status inverse_solution(O_Linklist L,long &Ans,long x);
 
-extern int my_storage_1;       //shang
-extern int my_storage_2;       //yu
+extern long my_storage_1;       //shang
+extern long my_storage_2;       //yu
 
 #endif // !MY_RSA

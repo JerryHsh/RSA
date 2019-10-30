@@ -18,7 +18,6 @@ typedef struct Node
         int a2;
         int c1; //coefficent
         int c2;
-        //struct Node *next;
 }Ans_Lnode;
 
 typedef struct Node2
@@ -29,13 +28,7 @@ typedef struct Node2
         int q; //yu
         struct Node2 *next;
 }O_Lnode;
-/*
-typedef struct List   //a list which is filo
-{
-        Ans_Lnode * head;
-        int length;
-}Ans_Linklist;
-*/
+
 typedef struct List2
 {
         O_Lnode *head;

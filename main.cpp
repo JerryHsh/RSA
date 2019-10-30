@@ -7,32 +7,35 @@ int main()
 {
         system("clear");
         int n,e;
-        cout<<"Input the secret key please"<<endl;
-        cout<<"n:";
+        int prime1,prime2;
+        int store_c_p; //(p-1)*(q-1)
+        int private_key;
+        int key;
+        int decrpted_num;
+        O_Linklist L;
+        O_Lnode *p=L.head;
+        cout<<"Input the public key please"<<endl;
+        cout<<"n:"<<endl;
         cin>>n;
-        cout<<'\t';
-        cout<<"e:";
+        cout<<"e:"<<endl;
         cin>>e;
         cout<<endl;
-        cout<<"Input the decryption num prime1 prime2"<<endl;
-        int prime1,prime2;
+        cout<<"Input the prime factors of prime1 prime2"<<endl;
         cin>>prime1;
         cin>>prime2;
         //give the key of decryption
-        O_Linklist L;
         InitList(L);
-        int store_c_p; //p-1*q-1
         store_c_p=(prime1-1)*(prime2-1);
         Oujilide_decompose(store_c_p,e,L);
-        O_Lnode *p=L.head;
+        /*
         while(p->next!=NULL)
         {
                 p=p->next;
                 cout<<p->devision<<"="<<p->p<<"*"<<p->devider<<"+"<<p->q<<endl;
         }
-        int answer;
-        inverse_solution(L,answer,e);
-        cout<<"your key is :"<<answer<<endl;
+        */
+        inverse_solution(L,private_key,e);
+        cout<<"your private_key is :"<<private_key<<endl;
         //begin to secrete;
         cout<<"Input the number you want to secret"<<endl;
         int original_num;
@@ -40,10 +43,8 @@ int main()
         int crypted_num;
         crypted_num=modlous(original_num,e,n);
         cout<<crypted_num<<endl;
-        cout<<"Input your key"<<endl;
-        int key;
+        cout<<"Input your private_key"<<endl;
         cin>>key;
-        int decrpted_num;
         store_c_p=prime1*prime2;
         decrpted_num=modlous(crypted_num,key,store_c_p);
         cout<<"this is the decrypted num"<<decrpted_num<<endl;
